@@ -23,3 +23,6 @@ go.work.sum
 
 # env file
 .env
+pattern/findallstring.json
+pattern/matchstring.json
+pattern/temp.json
