@@ -44,7 +44,5 @@
     "MS_Teams_Webhook": "(https://[a-zA-Z0-9]+\\.webhook\\.office\\.com/webhookb2/[a-zA-Z0-9-]+@[a-zA-Z0-9-]+/IncomingWebhook/[a-zA-Z0-9]+/[a-zA-Z0-9-]+)",
     "Azure_Sensitive_Info": "(?i)((azure|connection string|app(?:lication)?\\s*(?:id|key|secret)|client\\s*(?:id|secret)|access\\s*(?:key|token))\\s*[:=]\\s*['\"]([a-zA-Z0-9+/=_\\-]{16,})['\"](\\s|$))",
     "DBs": "(?i)((mongodb|mysql|orcl|postgresql|sqlserver).*)",
-    "Mysql Connection String": "(?i)(?:mysql://)?jdbc:mysql://(?P<username>[^:]+):(?P<password>[^@]+)@(?P<host>[^:/\\s]+)(?::(?P<port>\\d+))?/(?P<dbname>[^?\\s]+)(?:\\?.*?)?",
-    "VaultAppRole": "(?i)(role_id|secret_id).*",
-    "Hashicorp Vault": "(hvs\\.[a-zA-Z0-9]{24})"
+    "Mysql Connection String": "(?i)(?:mysql://)?jdbc:mysql://(?P<username>[^:]+):(?P<password>[^@]+)@(?P<host>[^:/\\s]+)(?::(?P<port>\\d+))?/(?P<dbname>[^?\\s]+)(?:\\?.*?)?"
 }
