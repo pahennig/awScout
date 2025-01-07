@@ -38,3 +38,50 @@ This repository helps developers and security teams identify credentials, tokens
 ### Example
 With and without offuscation
 ![Demo of usage](./img/record.gif)
+
+### Required AWS Permissions
+The policy below includes permissions for all services and actions required to fully run the script. However, if you prefer to limit the scope to specific services, you can customize the policy accordingly. For example, to run it only for EC2, you would only need the following permissions: `ec2:DescribeInstances`, `ec2:DescribeLaunchTemplates`, `ec2:DescribeInstanceAttribute` and `ec2:DescribeLaunchTemplateVersions`:
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::*/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "codebuild:BatchGetProjects",
+                "cloudformation:ListStacks",
+                "ec2:DescribeInstances",
+                "lambda:ListFunctions",
+                "elasticmapreduce:ListBootstrapActions",
+                "ec2:DescribeLaunchTemplates",
+                "lambda:ListVersionsByFunction",
+                "ec2:DescribeInstanceAttribute",
+                "lambda:GetFunction",
+                "elasticmapreduce:ListSteps",
+                "ec2:DescribeLaunchTemplateVersions",
+                "glue:ListJobs",
+                "cloudformation:DescribeStacks",
+                "sagemaker:ListProcessingJobs",
+                "sagemaker:DescribeProcessingJob",
+                "cloudformation:DescribeStackSet",
+                "cloudformation:ListStackSets",
+                "cloudformation:GetTemplate",
+                "elasticmapreduce:ListClusters",
+                "codebuild:ListProjects",
+                "glue:GetJob",
+                "elasticmapreduce:ListBootstrapActions",
+                "elasticmapreduce:ListSteps",
+                "elasticmapreduce:ListClusters"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
